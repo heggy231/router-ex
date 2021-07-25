@@ -33,3 +33,37 @@ SPA effect for React app, I am using react-router-dom
 
 - after: refactoring
 
+```jsx
+import {
+  Link,
+  useRouteMatch
+} from "react-router-dom";
+
+
+const Blog = (props) => {
+  const { url } = useRouteMatch();
+  return (
+    <>
+      <h1>Blog about Crypto Currency</h1>
+      <nav>
+        {
+          blogPosts.map((post, index) => (
+            <>
+              <Link to={`${url}/${index}`}>
+                {post.title}
+              </Link>
+              <br />
+            </>
+          ))
+        }
+      </nav>
+    </>
+  );
+};
+
+```
+
+* result: 
+  - /blog/0
+  - /blog/1
+  - /blog/2

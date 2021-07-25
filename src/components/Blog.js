@@ -6,6 +6,8 @@ import {
   useRouteMatch
 } from "react-router-dom";
 
+import Post from "./Post";
+
 const blogPosts = [
   {
     title: "Blog post #1",
@@ -24,7 +26,9 @@ const blogPosts = [
 ];
 
 const Blog = (props) => {
-  const { url } = useRouteMatch();
+  // ask React Router what current URL, path by
+  //  calling useRouteMatch() function
+  const { path, url } = useRouteMatch();
   return (
     <>
       <h1>Blog about Crypto Currency</h1>
@@ -32,6 +36,7 @@ const Blog = (props) => {
         {
           blogPosts.map((post, index) => (
             <>
+{/* replace /blog/01 => using url variable ${url}/01 */}
               <Link to={`${url}/${index}`}>
                 {post.title}
               </Link>
@@ -40,6 +45,13 @@ const Blog = (props) => {
           ))
         }
       </nav>
+      {/* This is same as path="/blog" */}
+      <Route exact path={path}>
+        <h2>Please choose a blog post.</h2>
+      </Route>
+      <Route path={`${url}/:id`}>
+        <Post posts={blogPosts} />
+      </Route>
     </>
   );
 };
