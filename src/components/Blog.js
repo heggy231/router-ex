@@ -1,5 +1,22 @@
 import React from "react";
 
+const blogPosts = [
+  {
+    title: "Blog post #1",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    title: "Blog post #2",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita veritatis eaque earum atque saepe inventore possimus beatae aspernatur doloremque eius minima sed dolores obcaecati amet, modi exercitationem excepturi? Aut, velit?",
+  },
+  {
+    title: "Blog post #3",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, sint! Exercitationem deserunt et aliquid quia repellendus fugit rerum quasi optio, voluptates aperiam officiis architecto. Quam vitae aspernatur perspiciatis earum accusantium.",
+  },
+];
+
 const Blog = (props) => (
   <>
     <h1>Crypto Currency</h1>
