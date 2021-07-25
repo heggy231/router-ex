@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props) => (
+const About = (props) => (
   <>
     <h1>About Our Company</h1>
     <p>
@@ -8,3 +8,5 @@ export default (props) => (
     </p>
   </>
 );
+
+export default About;
