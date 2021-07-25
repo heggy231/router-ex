@@ -10,8 +10,6 @@ SPA (single page Application) for React app, I am using react-router-dom.
 
 ![react blog app](./public/react-blog-login.gif)
 
-
-
 * [react routing DC](https://learn.digitalcrafts.com/flex/lessons/full-stack-frameworks/react-router/#overview)
 
 * Refactoring: Making route param to not have any hard coded path.
