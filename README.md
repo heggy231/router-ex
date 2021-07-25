@@ -1,6 +1,16 @@
 # React Routing
 
-SPA (single page Application) for React app, I am using react-router-dom
+SPA (single page Application) for React app, I am using react-router-dom.
+
+## Notable features:
+1) Routing
+2) Protected routes
+3) Avoid hard-coding routes, by using `useRouteMatch()` hook that matches `path` and the current `url`
+4) Navigate programmatically by rendering `Redirect` Component or use the `history` Object.
+
+![react blog app](./public/react-blog-login.gif)
+
+
 
 * [react routing DC](https://learn.digitalcrafts.com/flex/lessons/full-stack-frameworks/react-router/#overview)
 
