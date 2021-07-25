@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import About from "./components/About";
 import Blog from "./components/Blog";
@@ -13,6 +13,8 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Router>
       <div>
