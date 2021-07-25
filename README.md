@@ -1,6 +1,6 @@
 # React Routing
 
-SPA effect for React app, I am using react-router-dom
+SPA (single page Application) for React app, I am using react-router-dom
 
 * [react routing DC](https://learn.digitalcrafts.com/flex/lessons/full-stack-frameworks/react-router/#overview)
 
@@ -118,6 +118,7 @@ const Blog = (props) => {
         <Route path="/about">
           <About />
         </Route>
+  // catch all route **************
         <Route path="*">
           <h2>404: Page Not Found.</h2>
           <Link to="/">Take me back to Home page!</Link>
@@ -140,7 +141,7 @@ import {
   Redirect
 } from "react-router-dom";
 
-// Redirect to home page
+// Redirect any 404 page request back to home page *********
         <Route path="*">
           <Redirect to="/" />
         </Route>
@@ -148,7 +149,7 @@ import {
     </Router>
 ```
 
-- When a user is not logged in, <Link to='/blog'> is hidden.
+- Conditional rendering: When a user is not logged in, <Link to='/blog'> is hidden.
 
 ```jsx
 const [isLoggedIn, setIsLoggedIn] = useState(false);

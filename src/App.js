@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import About from "./components/About";
 import Blog from "./components/Blog";
 import Home from "./components/Home";
+import Protected from "./Protected";
 
 import { 
   BrowserRouter as Router, 
@@ -35,7 +36,9 @@ function App() {
           <Home />
         </Route>
         <Route path="/blog">
-          <Blog />
+          <Protected isLoggedIn={isLoggedIn}>
+            <Blog />
+          </Protected>
         </Route>
         <Route path="/about">
           <About />
