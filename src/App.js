@@ -8,7 +8,8 @@ import {
   BrowserRouter as Router, 
   Switch, 
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 function App() {
@@ -32,8 +33,7 @@ function App() {
           <About />
         </Route>
         <Route path="*">
-          <h2>404: Page Not Found.</h2>
-          <Link to="/">Take me back to Home page!</Link>
+          <Redirect to="/" />
         </Route>
       </Switch>
     </Router>

@@ -96,3 +96,54 @@ const Blog = (props) => {
   <br>
 </nav>
 ```
+
+- 404 Error Page not found page 2 options:
+1) add catch all route *
+```jsx
+    <Router>
+      <div>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/about">About</Link>
+        </nav>
+      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="*">
+          <h2>404: Page Not Found.</h2>
+          <Link to="/">Take me back to Home page!</Link>
+        </Route>
+      </Switch>
+    </Router>
+```
+
+2) option 2 for 404 page not found error page:
+
+* redirect user back to home page
+
+```jsx
+// add Redirect from react-router-dom
+import { 
+  BrowserRouter as Router, 
+  Switch, 
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
+
+// Redirect to home page
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
+      </Switch>
+    </Router>
+```
