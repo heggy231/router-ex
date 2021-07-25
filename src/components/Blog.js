@@ -1,9 +1,9 @@
 import React from "react";
 
-
 import {
-  Link
-} from 'react-router-dom';
+  Link,
+  useRouteMatch
+} from "react-router-dom";
 
 const blogPosts = [
   {
@@ -23,6 +23,7 @@ const blogPosts = [
 ];
 
 const Blog = (props) => {
+  const { url } = useRouteMatch();
   return (
     <>
       <h1>Blog about Crypto Currency</h1>
@@ -30,7 +31,7 @@ const Blog = (props) => {
         {
           blogPosts.map((post, index) => (
             <>
-              <Link to={`/blog/${index}`}>
+              <Link to={`${url}/${index}`}>
                 {post.title}
               </Link>
               <br />
