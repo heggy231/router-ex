@@ -158,3 +158,31 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
 //   only include <Link to='/blog'> if isLoggedIn has a truthy value
 { isLoggedIn && <Link to="/blog">Blog</Link> }
 ```
+
+- use history.push() to send user to home page ("/")
+
+```jsx
+import { useHistory } from "react-router";
+
+const Protected = (props) => {
+  const  history = useHistory();
+  if (!props.isLoggedIn) {
+    // If not logged in, redirect to login page
+    //  component return nothing
+    history.push("/");
+    return null;
+  } else {
+    // If logged in, render children Blog component
+    return (
+      <>
+        {props.children}
+      </>
+    )
+  }
+};
+```
+- OR use ternary operator, Redirect component
+
+```jsx
+
+```
