@@ -15,12 +15,18 @@ import {
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const _toggleIsLoggedIn = () => setIsLoggedIn(!isLoggedIn);
+
   return (
     <Router>
       <div>
+        <button onClick={_toggleIsLoggedIn}>
+          { isLoggedIn ? "Logout" : "Login"}
+        </button>
+        <br />
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/blog">Blog</Link>
+          { isLoggedIn && <Link to="/blog">Blog</Link> }
           <Link to="/about">About</Link>
         </nav>
       </div>

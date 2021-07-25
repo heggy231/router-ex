@@ -147,3 +147,13 @@ import {
       </Switch>
     </Router>
 ```
+
+- When a user is not logged in, <Link to='/blog'> is hidden.
+
+```jsx
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+// isLoggedIn initial state is false 
+//   only include <Link to='/blog'> if isLoggedIn has a truthy value
+{ isLoggedIn && <Link to="/blog">Blog</Link> }
+```
