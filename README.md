@@ -67,3 +67,32 @@ const Blog = (props) => {
   - /blog/0
   - /blog/1
   - /blog/2
+
+
+- What `Link to` and .map over array of Blog posts looks like once rendering:
+```jsx
+<nav>
+  {
+    blogPosts.map((post, index) => (
+      <>
+{/* replace /blog/01 => using url variable ${url}/01 */}
+        <Link to={`${url}/${index}`}>
+          {post.title}
+        </Link>
+        <br />
+      </>
+    ))
+  }
+</nav>
+```
+
+```html
+<nav>
+  <a href="/blog/0">Blog post #1</a>
+  <br>
+  <a href="/blog/1">Blog post #2</a>
+  <br>
+  <a href="/blog/2">Blog post #3</a>
+  <br>
+</nav>
+```

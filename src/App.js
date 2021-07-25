@@ -31,6 +31,10 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
+        <Route path="*">
+          <h2>404: Page Not Found.</h2>
+          <Link to="/">Take me back to Home page!</Link>
+        </Route>
       </Switch>
     </Router>
   );

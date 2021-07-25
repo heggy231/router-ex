@@ -32,6 +32,10 @@ const Blog = (props) => {
   return (
     <>
       <h1>Blog about Crypto Currency</h1>
+      {/* This is same as path="/blog" */}
+      <Route exact path={path}>
+        <h2>Please choose a blog post.</h2>
+      </Route>
       <nav>
         {
           blogPosts.map((post, index) => (
@@ -45,10 +49,7 @@ const Blog = (props) => {
           ))
         }
       </nav>
-      {/* This is same as path="/blog" */}
-      <Route exact path={path}>
-        <h2>Please choose a blog post.</h2>
-      </Route>
+
       <Route path={`${url}/:id`}>
         <Post posts={blogPosts} />
       </Route>
